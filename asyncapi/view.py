@@ -1,5 +1,9 @@
 from fastapi import Depends, APIRouter
+from sqlalchemy.orm import Session
 from starlette.responses import FileResponse
+
+from dbsql import schemas, crud
+from dbsql.my_db import get_db
 from .utils import mydf
 import asyncio
 import time
@@ -7,15 +11,11 @@ import time
 app = APIRouter()
 
 
-# @app.get("/user", response_model=schemas.MyUser)
-# def get_age(db: Session = Depends(get_db)):
-#     print('db conn')
-#     users = crud.get_user(db)
-#     users = {
-#         "id": users.id,
-#         "age": users.age
-#     }
-#     return users
+@app.get("/user")
+def get_age(db: Session = Depends(get_db)):
+    print('db conn')
+    users = crud.get_user_by_email(db)
+    return users
 
 
 def get_age_add():

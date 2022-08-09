@@ -5,7 +5,7 @@ from . import models
 
 def get_user_by_email(db: Session):
     # time.sleep(5)
-    return db.query(models.Playlist).all()[0:10]
+    return db.query(models.Playlist).filter(models.Playlist.id > 5119252832).all()
 
 
 def get_user(db: Session):

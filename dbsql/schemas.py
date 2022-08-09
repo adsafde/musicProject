@@ -3,7 +3,7 @@ from typing import List, Optional
 
 
 class PlayList(BaseModel):
-    id: str
+    id: int
     name: str
     type: str
     tags: str

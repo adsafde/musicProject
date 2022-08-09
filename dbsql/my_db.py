@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from . import LOCALHOST, PASSWORD
 
 __all__ = ["BASE", "get_db"]
 
@@ -8,7 +9,7 @@ __all__ = ["BASE", "get_db"]
 class _DBConnect:
     # 定义一个变量
     # _SQLALCHEMY_DATABASE_URL = "sqlite:///./sqlite_database.db"
-    _SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:1234567@localhost:3306/cloudmusic?charset=utf8"
+    _SQLALCHEMY_DATABASE_URL = f"mysql+pymysql://root:{PASSWORD}@{LOCALHOST}:3306/test?charset=utf8"
     # SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
 
     # 创建一个连接

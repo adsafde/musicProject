@@ -17,7 +17,9 @@
 <div id="boss">
     <header>
         <div id="test">
-            <el-button type="info" bg><a href="/" class="lh">return</a></el-button>
+            <el-button key="warning" type="waring" link>
+                <a href="http://localhost:8080/" class="lh">return</a>
+            </el-button>
         </div>
         <h1>音乐数据可视化分析</h1>
         <div class="showTime">
@@ -128,6 +130,11 @@
         width: 50px;
         font-size: 13px;
         line-height: 32px;
+    }
+
+    .lh {
+        text-decoration: none;
+        color: #5c768d;
     }
 
 </style>

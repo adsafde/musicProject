@@ -6,7 +6,7 @@ from .my_db import BASE
 class Playlist(BASE):
     __tablename__ = 'playlists'
 
-    id = Column(String(255), primary_key=True)
+    id = Column(Integer, primary_key=True)
     name = Column(String(255))
     type = Column(String(255))
     tags = Column(String(255))

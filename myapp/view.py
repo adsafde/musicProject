@@ -233,3 +233,11 @@ async def musics(name: str):
     # print(data)
 
     return data
+
+
+from fastapi import Request
+
+
+@app.get('/reqs')
+def req(request: Request):
+    return {"path": 'hhhfsa'}
